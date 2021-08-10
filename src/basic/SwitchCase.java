@@ -15,7 +15,7 @@ public class SwitchCase {
                 System.out.println("may");
                 break;
             default:
-                System.out.println("일차하는 값 없음.");
+                System.out.println("일치하는 값 없음.");
         }
     }
 }
