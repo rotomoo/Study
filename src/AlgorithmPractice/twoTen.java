@@ -31,7 +31,7 @@ public class twoTen {
         twoTen T = new twoTen();
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
-        int numArr[][] = new int[num][num];
+        int[][] numArr = new int[num][num];
         for (int i =0;i<num;i++) {
             for (int j=0;j<num;j++) {
                 numArr[i][j] = scanner.nextInt();
