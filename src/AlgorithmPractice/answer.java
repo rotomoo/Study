@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class answer {
 
-    public String solution(String str, int num) {
-        String answer="";
+    public String solution(String str) {
+        String answer="YES";
 
         return answer;
     }
@@ -14,7 +14,6 @@ public class answer {
         answer T = new answer();
         Scanner scanner = new Scanner(System.in);
         String str = scanner.next();
-        int num = scanner.nextInt();
-        System.out.print(T.solution(str, num));
+        System.out.print(T.solution(str));
     }
 }
