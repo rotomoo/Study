@@ -42,6 +42,5 @@ public class sevenSeven {
         Tree.root.rt.lt=new Node2(6);
         Tree.root.rt.rt=new Node2(7);
         Tree.BFS(Tree.root);
-
     }
 }

@@ -5,7 +5,6 @@ import java.util.Queue;
 import java.util.Scanner;
 
 class sevenEight {
-    int answer=0;
     int[] dis={1, -1, 5};
     int[] ch;
     Queue<Integer> queue = new LinkedList<>();

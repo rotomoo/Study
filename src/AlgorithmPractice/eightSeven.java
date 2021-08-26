@@ -2,7 +2,7 @@ package AlgorithmPractice;
 
 import java.util.Scanner;
 
-public class Main {
+public class eightSeven {
     static int n, r;
     static int[][] arr;
 
@@ -13,7 +13,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        eightSeven T = new eightSeven();
         Scanner scanner = new Scanner(System.in);
         n = scanner.nextInt();
         r = scanner.nextInt();
