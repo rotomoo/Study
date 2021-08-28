@@ -2,7 +2,7 @@ package AlgorithmPractice;
 
 import java.util.Scanner;
 
-public class answer {
+class answer {
 
     public String solution(String str) {
         String answer="YES";
