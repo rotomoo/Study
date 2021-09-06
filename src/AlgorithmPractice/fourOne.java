@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class fourOne {
 
-    public char solution(int num, String str) {
+    public char solution(String str) {
         char answer=' ';
         HashMap<Character, Integer> map = new HashMap<>();
         for (char x : str.toCharArray()) {
@@ -13,7 +13,6 @@ public class fourOne {
         }
         //System.out.println(map.containsKey('A'));
         //System.out.println(map.size());
-
         int max = Integer.MIN_VALUE;
         for (char key : map.keySet()) {
             //System.out.println(key+" "+map.get(key));
@@ -30,6 +29,6 @@ public class fourOne {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
         String str = scanner.next();
-        System.out.println(T.solution(num, str));
+        System.out.println(T.solution(str));
     }
 }

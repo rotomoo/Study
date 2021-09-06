@@ -11,7 +11,6 @@ public class oneFour {
             String tmp = new StringBuilder(x).reverse().toString();
             answer.add(tmp);
         }
-
         return answer;
     }
 

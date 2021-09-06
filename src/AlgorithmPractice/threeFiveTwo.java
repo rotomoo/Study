@@ -4,21 +4,21 @@ import java.util.Scanner;
 
 public class threeFiveTwo {
 
-    public int solution(int countNumber) {
+    public int solution(int n) {
         int answer = 0;
         int cnt=1;
-        countNumber--;
-        while (countNumber>0) {
+        n--;
+        while (n>0) {
             cnt++;
-            countNumber-=cnt;
-            if (countNumber%cnt==0) answer++;
+            n-=cnt;
+            if (n%cnt==0) answer++;
         }
         return answer;
     }
     public static void main(String[] args) {
         threeFiveTwo T = new threeFiveTwo();
         Scanner scanner = new Scanner(System.in);
-        int countNumber = scanner.nextInt();
-            System.out.print(T.solution(countNumber));
+        int n = scanner.nextInt();
+            System.out.print(T.solution(n));
     }
 }

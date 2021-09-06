@@ -9,6 +9,7 @@ public class oneFourTwo {
         ArrayList<String> answer=new ArrayList<>();
         for (String x : inputString) {
             char[] s = x.toCharArray();
+            int[] t = new int[3];
             int lt=0;
             int rt=x.length()-1;
             while (lt<rt) {

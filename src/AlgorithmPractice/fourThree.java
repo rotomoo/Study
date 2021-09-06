@@ -6,18 +6,18 @@ import java.util.Scanner;
 
 public class fourThree {
 
-    public ArrayList<Integer> solution(int day,int sales, int[] array) {
+    public ArrayList<Integer> solution(int n,int k, int[] arr) {
         ArrayList<Integer> answer=new ArrayList<>();
         HashMap<Integer, Integer> map = new HashMap<>();
-        for (int first=0; first<sales-1; first++) {
-            map.put(array[first], map.getOrDefault(array[first], 0)+1);
+        for (int i=0; i<k-1; i++) {
+            map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
         }
         int left=0;
-        for (int right=sales-1; right<day; right++) {
-            map.put(array[right], map.getOrDefault(array[right], 0)+1);
+        for (int right=k-1; right<n; right++) {
+            map.put(arr[right], map.getOrDefault(arr[right], 0)+1);
             answer.add(map.size());
-            map.put(array[left],map.get(array[left])-1);
-            if (map.get(array[left])==0) map.remove(array[left]);
+            map.put(arr[left],map.get(arr[left])-1);
+            if (map.get(arr[left])==0) map.remove(arr[left]);
             left++;
         }
         return answer;
@@ -26,13 +26,13 @@ public class fourThree {
     public static void main(String[] args) {
         fourThree T = new fourThree();
         Scanner scanner = new Scanner(System.in);
-        int day = scanner.nextInt();
-        int sales = scanner.nextInt();
-        int[] array = new int[day];
-        for (int i=0; i<day; i++) {
-            array[i] = scanner.nextInt();
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+        int[] arr = new int[n];
+        for (int i=0; i<n; i++) {
+            arr[i] = scanner.nextInt();
         }
-        for (int x : T.solution(day, sales, array))
+        for (int x : T.solution(n, k, arr))
         System.out.print(x+" ");
     }
 }

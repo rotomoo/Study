@@ -3,29 +3,22 @@ package AlgorithmPractice;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class fiveTwoThree {
-
+class fiveTwoRetry {
     public String solution(String str) {
-        String answer="";
+        String answer = "";
         Stack<Character> stack = new Stack<>();
         for (char x : str.toCharArray()) {
-            if (x == ')') {
-                while (stack.pop() != '(');
-            }
-            else {
-                stack.push(x);
-            }
-        }
-        for (int i=0;i<stack.size();i++) {
-            answer+=stack.get(i);
+            if (x=='(') stack.push(x);
+            if (x==')') stack.pop();
+            if (stack.isEmpty() && x!=')') answer+=x;
         }
         return answer;
     }
 
     public static void main(String[] args) {
-        fiveTwoThree T = new fiveTwoThree();
+        fiveTwoRetry T = new fiveTwoRetry();
         Scanner scanner = new Scanner(System.in);
         String str = scanner.next();
-        System.out.print(T.solution(str));
+        System.out.println(T.solution(str));
     }
 }

@@ -18,7 +18,6 @@ public class oneTen {
         }
         p=1000;
         for (int j = s.length()-1; j >= 0; j--) {
-            System.out.println(j);
             if (s.charAt(j) == t) {
                 p = 0;
             } else {

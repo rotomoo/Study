@@ -18,13 +18,13 @@ class twoSix {
         for (int i = 0; i < num; i++) {
             int tmp=numArr[i];
             int res=0;
-                while (tmp>0) {
-                    res= res*10+tmp%10;
-                    tmp= tmp/10;
-                }
-                if (isPrime(res)) {
-                    answer.add(res);
-                }
+            while (tmp>0) {
+                res= res*10+tmp%10;
+                tmp= tmp/10;
+            }
+            if (isPrime(res)) {
+                answer.add(res);
+            }
         }
         return answer;
     }
@@ -34,7 +34,7 @@ class twoSix {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
         int[] numArr = new int[num];
-        for (int i = 0; i < num; i++) {
+        for (int i = 0; i <num; i++) {
             numArr[i] = scanner.nextInt();
         }
         for (int x : T.solution(num, numArr)) {

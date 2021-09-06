@@ -17,7 +17,7 @@ public class fourFive {
             }
         }
         int cnt=0;
-        System.out.println(Tset.first());
+        //System.out.println(Tset.first());
         for (int x : Tset) {
             cnt++;
             if (cnt==bigNumber) return x;

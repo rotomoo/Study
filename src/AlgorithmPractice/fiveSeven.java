@@ -4,13 +4,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class fiveSeven {
-
-    public String solution(String need,String edus) {
+class fiveSeven {
+    public String solution(String str1, String str2) {
         String answer="YES";
-        Queue<Character> queue = new LinkedList<>();
-        for (char x : need.toCharArray()) queue.offer(x);
-        for (char x : edus.toCharArray()) {
+        Queue<Character> queue= new LinkedList<>();
+        for (char x : str1.toCharArray()) queue.offer(x);
+        for (char x : str2.toCharArray()) {
             if (queue.contains(x)) {
                 if (x!=queue.poll()) return "NO";
             }
@@ -22,8 +21,8 @@ public class fiveSeven {
     public static void main(String[] args) {
         fiveSeven T = new fiveSeven();
         Scanner scanner = new Scanner(System.in);
-        String need = scanner.next();
-        String edus = scanner.next();
-        System.out.print(T.solution(need, edus));
+        String str1 = scanner.next();
+        String str2 = scanner.next();
+        System.out.println(T.solution(str1,str2));
     }
 }

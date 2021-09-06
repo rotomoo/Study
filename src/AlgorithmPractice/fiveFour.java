@@ -22,7 +22,6 @@ public class fiveFour {
             }
         }
         answer=stack.get(0);
-
         return answer;
     }
 
