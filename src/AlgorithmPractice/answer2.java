@@ -9,7 +9,6 @@ public class answer2 {
         return answer;
     }
 
-
     public static void main(String[] args) {
         answer2 T = new answer2();
         Scanner scanner = new Scanner(System.in);
