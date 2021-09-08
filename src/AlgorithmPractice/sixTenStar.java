@@ -1,15 +1,15 @@
 package AlgorithmPractice;
 
-import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Arrays;
 
-public class sixTen {
+public class sixTenStar {
 
-    public int count(int[] arr, int dt) {
+    public int count(int[] arr, int dis) {
         int cnt=1;
         int ep=arr[0];
-        for (int i=1; i<arr.length; i++) {
-            if (arr[i]-ep>=dt) {
+        for(int i=1; i<arr.length; i++) {
+            if (arr[i]-ep>=dis) {
                 cnt++;
                 ep=arr[i];
             }
@@ -17,13 +17,11 @@ public class sixTen {
         return cnt;
     }
 
-    public int solution(int n,int c,int[] arr) {
-        int answer=0;
+    public int solution(int n, int c, int[] arr) {
+        int answer = 0, lt=1, rt=Arrays.stream(arr).max().getAsInt()-1;
         Arrays.sort(arr);
-        int lt=1;
-        int rt=arr[n-1];
-        while (lt <= rt) {
-            int mid=(lt+rt)/2;
+        while (lt<=rt) {
+            int mid = (lt+rt)/2;
             if (count(arr, mid)>=c) {
                 answer=mid;
                 lt=mid+1;
@@ -34,14 +32,14 @@ public class sixTen {
     }
 
     public static void main(String[] args) {
-        sixTen T = new sixTen();
+        sixTenStar T = new sixTenStar();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int c = scanner.nextInt();
         int[] arr = new int[n];
-        for (int i=0;i<n;i++) {
-            arr[i]=scanner.nextInt();
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
         }
-        System.out.print(T.solution(n,c,arr));
+        System.out.print(T.solution(n, c, arr));
     }
 }

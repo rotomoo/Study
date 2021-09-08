@@ -1,14 +1,14 @@
 package AlgorithmPractice;
 
-import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Arrays;
 
-public class sixNine {
+public class sixNineStar {
 
-    public int count(int[] arr, int capacity) {
+    public int count(int[] arr,int mid) {
         int cnt=1, sum=0;
         for (int x : arr) {
-            if (sum+x>capacity) {
+            if (sum+x>mid) {
                 cnt++;
                 sum=x;
             }
@@ -17,13 +17,13 @@ public class sixNine {
         return cnt;
     }
 
-    public int solution(int n,int m,int[] arr) {
-        int answer=0;
+    public int solution(int n, int m, int[] arr) {
+        int answer = 0;
         int lt=Arrays.stream(arr).max().getAsInt();
         int rt=Arrays.stream(arr).sum();
         while (lt<=rt) {
             int mid=(lt+rt)/2;
-            if (count(arr, mid)<=m) {
+            if(count(arr, mid)<=m) {
                 answer=mid;
                 rt=mid-1;
             }
@@ -33,14 +33,14 @@ public class sixNine {
     }
 
     public static void main(String[] args) {
-        sixNine T = new sixNine();
+        sixNineStar T = new sixNineStar();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int m = scanner.nextInt();
         int[] arr = new int[n];
-        for (int i=0;i<n;i++) {
-            arr[i]=scanner.nextInt();
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
         }
-        System.out.print(T.solution(n,m,arr));
+        System.out.print(T.solution(n, m, arr));
     }
 }
