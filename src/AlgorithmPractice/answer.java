@@ -6,7 +6,6 @@ class answer {
     public String solution(String[] arr) {
         String answer="";
 
-
         return answer;
     }
 
