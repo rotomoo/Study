@@ -2,9 +2,9 @@ package AlgorithmPractice;
 
 import java.util.Scanner;
 
-public class answer2 {
+class answer2 {
 
-    public int solution(int n, int m, int[] arr) {
+    public int solution(int n, int c , int[] arr) {
         int answer = 0;
         return answer;
     }
@@ -13,11 +13,11 @@ public class answer2 {
         answer2 T = new answer2();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int m = scanner.nextInt();
+        int c = scanner.nextInt();
         int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <n; i++) {
             arr[i] = scanner.nextInt();
         }
-        System.out.print(T.solution(n, m, arr));
+        System.out.println(T.solution(n, c, arr));
     }
 }

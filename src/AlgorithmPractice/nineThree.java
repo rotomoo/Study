@@ -24,7 +24,6 @@ class nineThree {
         int cnt=0;
         int answer=0;
         Collections.sort(list);
-        int et=0;
         for (Point8 ob : list) {
             if (ob.state=='s') cnt++;
             else cnt--;

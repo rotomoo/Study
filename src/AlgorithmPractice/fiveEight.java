@@ -13,7 +13,7 @@ class Person {
     }
 }
 
-class fiveEightMain {
+class fiveEight {
 
     public int solution(int n, int m, int[] array) {
         int answer=0;
@@ -39,7 +39,7 @@ class fiveEightMain {
     }
 
     public static void main(String[] args) {
-        fiveEightMain T = new fiveEightMain();
+        fiveEight T = new fiveEight();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int m= scanner.nextInt();
