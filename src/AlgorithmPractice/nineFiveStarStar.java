@@ -5,6 +5,18 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
+class Point10 implements Comparable<Point10> {
+    int vex, cost;
+    Point10(int vex,int cost) {
+        this.vex=vex;
+        this.cost=cost;
+    }
+    @Override
+    public int compareTo(Point10 ob) {
+        return this.cost-ob.cost;
+    }
+}
+
 class nineFiveStarStar {
     static int n, m;
     static ArrayList<ArrayList<Point10>> graph;

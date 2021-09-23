@@ -13,7 +13,6 @@ public class eightTwo {
         else {
             DFS(L+1, sum+arr[L], arr);
             DFS(L+1, sum, arr);
-
         }
     }
 

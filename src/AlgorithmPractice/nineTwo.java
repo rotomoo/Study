@@ -21,13 +21,12 @@ class Point7 implements Comparable<Point7> {
 
 class nineTwo {
    public int solution(ArrayList<Point7> list, int n) {
-       int answer=0;
+       int answer=0, et=0;
        Collections.sort(list);
-       int max=0;
        for (Point7 ob: list) {
-           if (ob.st>=max) {
+           if (ob.st>=et) {
                answer++;
-               max=ob.et;
+               et=ob.et;
            }
        }
        return answer;
