@@ -1,6 +1,7 @@
 package InflearnAlgorithm;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -22,7 +23,7 @@ class nineEightStarStar {
     static ArrayList<ArrayList<Point26>> graph;
     static int[] ch;
     static int answer=0;
-    public int BFS(int v, int cost) {
+    public void BFS(int v, int cost) {
         PriorityQueue<Point26> pq = new PriorityQueue<>();
         pq.offer(new Point26(v,cost));
         while (!pq.isEmpty()) {
@@ -36,7 +37,6 @@ class nineEightStarStar {
                 }
             }
         }
-        return answer;
     }
 
     public static void main(String[] args) {
@@ -55,6 +55,6 @@ class nineEightStarStar {
             graph.get(b).add(new Point26(a,c));
         }
         T.BFS(1,0);
-        System.out.println(answer);
+        System.out.print(answer);
     }
 }
