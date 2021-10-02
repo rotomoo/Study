@@ -37,8 +37,8 @@ public class Dfs2667Star {
         }
         for (int i=0; i<n; i++) {
             for (int j=0; j<n; j++) {
-                cnt=1;
                 if (graph[i][j]==1) {
+                    cnt=1;
                     graph[i][j]=0;
                     DFS(i,j);
                     list.add(cnt);
