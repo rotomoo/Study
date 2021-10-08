@@ -20,8 +20,7 @@ public class Greedy1339StarStar {
         }
         ArrayList<Character> list = new ArrayList<>(map.keySet());
         Collections.sort(list,(s1,s2)->map.get(s2)-map.get(s1));
-        int answer=0;
-        int tmp=9;
+        int answer=0, tmp=9;
         for (char x : list) answer+=tmp--*map.get(x);
         System.out.print(answer);
     }
