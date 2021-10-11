@@ -19,12 +19,11 @@ public class BackTraking9663StarStar {
     public static void DFS(int L) {
         if (L==n) {
             answer++;
-            return;
         }
         else {
-            for (int i=0; i<n; i++) {
-                arr[L]=i;
-                if (isPossible(L)) DFS(L+1);
+            for (int i = 0; i < n; i++) {
+                arr[L] = i;
+                if (isPossible(L)) DFS(L + 1);
             }
         }
     }

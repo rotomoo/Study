@@ -29,7 +29,7 @@ public class Bfs7576StarStar {
             for (int i=0; i<4; i++) {
                 int nx = tmp.x+dx[i];
                 int ny = tmp.y+dy[i];
-                if (nx>=0 && nx<m && ny>=0 && ny<n &&graph[nx][ny]==0) {
+                if (nx>=0 && nx<n && ny>=0 && ny<m &&graph[nx][ny]==0) {
                     graph[nx][ny]=1;
                     q.offer(new Point5(nx,ny));
                     dis[nx][ny]=dis[tmp.x][tmp.y]+1;
@@ -41,21 +41,21 @@ public class Bfs7576StarStar {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
-        graph = new int[m][n];
-        dis = new int[m][n];
-        for (int i=0; i<m; i++) {
+        n = Integer.parseInt(st.nextToken());
+        graph = new int[n][m];
+        dis = new int[n][m];
+        for (int i=0; i<n; i++) {
             st = new StringTokenizer(br.readLine());
-            for (int j=0; j<n; j++) {
+            for (int j=0; j<m; j++) {
                 graph[i][j]=Integer.parseInt(st.nextToken());
                 if (graph[i][j]==1) q.offer(new Point5(i,j));
             }
         }
         BFS();
         int answer=0;
-        for (int i=0; i<m; i++) {
-            for (int j=0; j<n; j++) {
+        for (int i=0; i<n; i++) {
+            for (int j=0; j<m; j++) {
                 if (graph[i][j]==0) {
                     System.out.print(-1);
                     return;
