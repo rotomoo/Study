@@ -47,7 +47,7 @@ public class Bfs2178StarStar {
         for (int i=1; i<=n; i++) {
             String tmp = br.readLine();
             for (int j=1; j<=m; j++) {
-                graph[i][j]=Integer.parseInt(String.valueOf(tmp.charAt(j-1)));
+                graph[i][j]=tmp.charAt(j-1)-'0';
             }
         }
         graph[1][1]=0;

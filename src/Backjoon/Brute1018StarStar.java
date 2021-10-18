@@ -19,8 +19,8 @@ public class Brute1018StarStar {
             }
         }
         int answer=Integer.MAX_VALUE;
-        for (int i=0; i<n-7; i++) {
-            for (int j=0; j<m-7; j++) {
+        for (int i=0; i<=n-8; i++) {
+            for (int j=0; j<=m-8; j++) {
                 int cnt=0;
                 char tmp=graph[i][j];
                 for (int x=i; x<i+8; x++) {
