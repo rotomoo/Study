@@ -14,7 +14,7 @@ public static void main(String[] args) throws IOException {
         for (int i=0; i<n; i++) cost[i]=Long.parseLong(st.nextToken());
         long answer=0, tmp=cost[0];
         for (int i=0; i<n-1; i++) {
-            if (tmp>cost[i]) tmp=cost[i];
+            tmp=Math.min(tmp,cost[i]);
             answer+=tmp*dis[i];
         }
         System.out.print(answer);
