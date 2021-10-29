@@ -9,10 +9,10 @@ public class MathDfs1629StarStar {
     static long c;
 
     public static long DFS(long a, long b) {
-        a%=c;
-        if (b==0) return 1;
-        else if (b%2==0) return DFS(a*a,b/2)%c;
-        else return a*DFS(a*a,(b-1)/2)%c;
+        if (b==1) return a%c;
+        long tmp = DFS(a,b/2);
+        if (b%2==0) return tmp*tmp%c;
+        return (tmp*tmp%c)*a%c;
     }
 
     public static void main(String[] args) throws IOException {
