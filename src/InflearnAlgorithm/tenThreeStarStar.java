@@ -15,6 +15,7 @@ class tenThreeStarStar {
             dy[i]=max+1;
             answer=Math.max(answer,dy[i]);
         }
+        for (int x : dy) System.out.print(x+" ");
         return answer;
     }
 
