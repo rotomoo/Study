@@ -2,7 +2,7 @@ package programmers;
 
 import java.io.IOException;
 
-public class greedy3 {
+public class Greedy3 {
 
     public static String solution(String number, int k) {
         StringBuilder answer = new StringBuilder();

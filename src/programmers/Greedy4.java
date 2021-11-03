@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.Arrays;
 
-public class greedy4 {
+public class Greedy4 {
     public static int solution(int[] people, int limit) {
         int answer = 0;
         Arrays.sort(people);
