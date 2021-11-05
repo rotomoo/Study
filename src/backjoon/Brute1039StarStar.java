@@ -20,7 +20,7 @@ public class Brute1039StarStar {
     public static void BFS() {
         Queue<Point> q =new LinkedList<>();
         int[][] ch = new int[1000001][k+1];
-        q.add(new Point(n,0));
+        q.offer(new Point(n,0));
         ch[n][0]=1;
         while (!q.isEmpty()) {
             Point o = q.poll();
@@ -33,7 +33,7 @@ public class Brute1039StarStar {
                 for (int j=i+1; j<len; j++) {
                     int tmp= swap(o.num,i,j);
                     if (tmp!=-1 && ch[tmp][o.cnt+1]==0) {
-                        q.add(new Point(tmp,o.cnt+1));
+                        q.offer(new Point(tmp,o.cnt+1));
                         ch[tmp][o.cnt+1]=1;
                     }
                 }

@@ -8,9 +8,9 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Bfs13460NotSolve {
-    static class Point {
-        int rx, ry, bx, by, cnt;
-        Point(int rx, int ry, int bx, int by, int cnt) {
+    static class Point{
+        int rx,ry,bx,by,cnt;
+        Point(int rx,int ry,int bx,int by,int cnt) {
             this.rx=rx;
             this.ry=ry;
             this.bx=bx;
@@ -18,23 +18,22 @@ public class Bfs13460NotSolve {
             this.cnt=cnt;
         }
     }
-
-    static int[] dx = {-1,0,1,0};
-    static int[] dy = {0,1,0,-1};
-    static int[][][][] ch;
     static int n,m,answer=-1;
-    static char[][] graph;
-    static Queue<Point> q = new LinkedList<>();
+    static int[][][][] ch;
+    static char[][] map;
+    static int[] dx={-1,0,1,0};
+    static int[] dy={0,1,0,-1};
 
-    public static void BFS(int rx, int ry, int bx, int by, int cnt) {
+    public static void BFS(Queue<Point> q) {
         while (!q.isEmpty()) {
-            Point tmp = q.poll();
             if (answer>10) {
                 answer=-1;
                 return;
             }
-            if (graph[tmp.bx][tmp.by]=='O') continue;
-            if (graph[tmp.rx][tmp.ry] == 'O') {
+            Point tmp = q.poll();
+            ch[tmp.rx][tmp.ry][tmp.bx][tmp.by]=1;
+            if (map[tmp.bx][tmp.by]=='O') continue;
+            if (map[tmp.rx][tmp.ry] == 'O') {
                 answer=tmp.cnt;
                 return;
             }
@@ -44,8 +43,8 @@ public class Bfs13460NotSolve {
                 while (true) {
                     bnx+=dx[i];
                     bny+=dy[i];
-                    if (graph[bnx][bny]=='O') break;
-                    else if (graph[bnx][bny]=='#') {
+                    if (map[bnx][bny]=='O') break;
+                    else if (map[bnx][bny]=='#') {
                         bnx-=dx[i];
                         bny-=dy[i];
                         break;
@@ -56,14 +55,14 @@ public class Bfs13460NotSolve {
                 while (true) {
                     rnx+=dx[i];
                     rny+=dy[i];
-                    if (graph[rnx][rny]=='O') break;
-                    else if (graph[rnx][rny]=='#') {
+                    if (map[rnx][rny]=='O') break;
+                    else if (map[rnx][rny]=='#') {
                         rnx-=dx[i];
                         rny-=dy[i];
                         break;
                     }
                 }
-                if (rnx==bnx && rny==bny && graph[rnx][rny]!='O') {
+                if (rnx==bnx && rny==bny && map[rnx][rny]!='O') {
                     int r_dis = Math.abs(tmp.rx - rnx) + Math.abs(tmp.ry - rny);
                     int b_dis = Math.abs(tmp.bx - bnx) + Math.abs(tmp.by - bny);
                     if(r_dis > b_dis) {
@@ -83,31 +82,32 @@ public class Bfs13460NotSolve {
         }
     }
 
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
-        graph = new char[n][m];
-        ch = new int[n][m][n][m];
-        int rx=0, ry=0, bx=0, by=0;
+        n=Integer.parseInt(st.nextToken());
+        m=Integer.parseInt(st.nextToken());
+        map= new char[n][m];
+        ch= new int[n][m][n][m];
+        int rx=0,ry=0,bx=0,by=0;
         for (int i=0; i<n; i++) {
             String str = br.readLine();
             for (int j=0; j<m; j++) {
-                graph[i][j]=str.charAt(j);
-                if (str.charAt(j)=='R') {
-                    rx=i;
-                    ry=j;
-                }
-                if (str.charAt(j)=='B') {
+                map[i][j]=str.charAt(j);
+                if (map[i][j]=='B') {
                     bx=i;
                     by=j;
                 }
+                if (map[i][j]=='R') {
+                    rx=i;
+                    ry=j;
+                }
             }
         }
-        ch[rx][ry][bx][by]=1;
-        q.offer(new Point(rx, ry, bx, by, 0));
-        BFS(rx, ry, bx, by, 0);
-        System.out.print(answer);
+        Queue<Point> q = new LinkedList<>();
+        q.offer(new Point(rx,ry,bx,by,0));
+        BFS(q);
+        System.out.println(answer);
     }
 }
