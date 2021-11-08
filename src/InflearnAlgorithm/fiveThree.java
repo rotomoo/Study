@@ -17,7 +17,7 @@ public class fiveThree {
                         stack.pop();
                     }
                     else {
-                    stack.push(tmp);
+                        stack.push(tmp);
                     }
                     break;
                 }
