@@ -3,7 +3,7 @@ package programmers;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Solution {
+public class nickname {
     public String[] solution(String[] record) {
         HashMap<String, String> map = new HashMap<>();
         ArrayList<String[]> list = new ArrayList<>();
@@ -33,7 +33,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution T = new Solution();
+        nickname T = new nickname();
         String[] record = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
         System.out.println(T.solution(record));
     }
