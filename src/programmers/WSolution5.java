@@ -3,7 +3,7 @@ package programmers;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Solution5 {
+public class WSolution5 {
     static class Point {
         int x, y;
         Point(int x, int y) {
@@ -58,7 +58,7 @@ public class Solution5 {
     }
 
     public static void main(String[] args) {
-        Solution5 T = new Solution5();
+        WSolution5 T = new WSolution5();
         int row =2;
         int columns=2;
         System.out.println(T.solution(row,columns));

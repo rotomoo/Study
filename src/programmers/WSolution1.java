@@ -3,7 +3,7 @@ package programmers;
 
 import java.util.HashMap;
 
-class Solution1 {
+class WSolution1 {
     public int[] solution(int[] arr) {
 
         HashMap<Integer,Integer> map = new HashMap<>();

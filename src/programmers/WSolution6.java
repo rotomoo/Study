@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.ArrayList;
 
-public class Solution6 {
+public class WSolution6 {
     static class Point {
         String str;
         int st, et;
@@ -41,7 +41,7 @@ public class Solution6 {
     }
 
     public static void main(String[] args) {
-        Solution6 T = new Solution6();
+        WSolution6 T = new WSolution6();
         double time=3.5;
         String[][] plans={{"홍콩", "11PM", "9AM"}, {"엘에이", "3PM", "2PM"}};
         System.out.println(T.solution(time, plans));

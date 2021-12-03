@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.Arrays;
 
-public class Solution4 {
+public class WSolution4 {
     public int[] solution(String s) {
         String str="";
         s=s+" ";
@@ -50,7 +50,7 @@ public class Solution4 {
     }
 
     public static void main(String[] args) {
-        Solution4 T = new Solution4();
+        WSolution4 T = new WSolution4();
         String s="abc";
         System.out.println(T.solution(s));
     }

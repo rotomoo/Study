@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class Solution2 {
+public class WSolution2 {
     public String solution2(String[] log) {
         String answer = "";
         int tmp=0;
@@ -30,7 +30,7 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
-        Solution2 T = new Solution2();
+        WSolution2 T = new WSolution2();
         String[] log={"08:30", "09:00"};
         System.out.println(T.solution2(log));
     }
