@@ -30,7 +30,7 @@ public class FarNode {
 
     public int solution(int n, int[][] edge) {
         list = new ArrayList<>();
-        for (int i=0; i<edge.length; i++) {
+        for (int i=0; i<=n; i++) {
             list.add(new ArrayList<>());
         }
         for (int i=0; i<edge.length; i++) {
