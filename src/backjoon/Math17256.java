@@ -1,7 +1,6 @@
 package backjoon;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Math17256 {
