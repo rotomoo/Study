@@ -1,6 +1,6 @@
 package programmers;
 
-public class answer1 {
+class answer1 {
     public int solution(int[] arr) {
         int answer=0;
         return answer;
