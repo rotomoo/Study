@@ -3,7 +3,7 @@ package programmers;
 import java.util.HashMap;
 
 public class answerNumber {
-    public int solution(String s) {
+    public static int solution(String s) {
         String answer = "";
         HashMap<String,Integer> map = new HashMap<>();
         map.put("zero",0);
@@ -34,8 +34,7 @@ public class answerNumber {
     }
 
     public static void main(String[] args) {
-        answerNumber T = new answerNumber();
-        String s="one4seveneight";
-        System.out.println(T.solution(s));
+        String s = "one4seveneight";
+        System.out.println(solution(s));
     }
 }
