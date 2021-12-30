@@ -6,7 +6,7 @@ public class WSolution6 {
     static class Point {
         String str;
         int st, et;
-        Point(String str,int st,int et) {
+        Point(String str, int st, int et) {
             this.str=str;
             this.st=st;
             this.et=et;
@@ -23,7 +23,7 @@ public class WSolution6 {
                     if (x>=48 && x<=57) tmp=tmp*10+(x-48);
                 }
                 if (plans[i][j].endsWith("PM")) tmp+=12;
-                plans[i][j]=String.valueOf(tmp);
+                plans[i][j]= String.valueOf(tmp);
             }
             list.add(new Point(plans[i][0],Integer.parseInt(plans[i][1]),Integer.parseInt(plans[i][2])));
         }

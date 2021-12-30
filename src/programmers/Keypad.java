@@ -34,7 +34,7 @@ public class Keypad {
         return numxy[x];
     }
 
-    public char pri(int[] tmpxy, int[] lH, int[] rH,String hand) {
+    public char pri(int[] tmpxy, int[] lH, int[] rH, String hand) {
         char tmp=' ';
         int ldis=Math.abs(lH[0]-tmpxy[0])+Math.abs(lH[1]-tmpxy[1]);
         int rdis=Math.abs(rH[0]-tmpxy[0])+Math.abs(rH[1]-tmpxy[1]);
