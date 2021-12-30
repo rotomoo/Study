@@ -1,25 +1,45 @@
 package backjoon2;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Implementation10162 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(br.readLine());
-        System.out.println(t%10==0 ? t/300+" "+t%300/60+" "+t%60/10:-1);
-//        int[] arr = {300,60,10};
-//        int t = Integer.parseInt(br.readLine());
-//        if (t%10!=0) {
-//            System.out.println(-1);
-//            System.exit(0);
-//        }
-//        int[] answer = new int[3];
-//        for (int i=0; i<3; i++) {
-//            answer[i] = t / arr[i];
-//            t %= arr[i];
-//        }
-//        for (int x : answer) System.out.print(x+" ");
+        int n = Integer.parseInt(br.readLine());
+        int a = n / 300;
+        int b = (n % 300) / 60;
+        int c = ((n % 300) % 60) / 10;
+        System.out.print(n%10==0 ? a + " " + b + " " + c : -1);
     }
+
+//        public static void main(String[] args) throws IOException {
+//            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//            int t = Integer.parseInt(br.readLine());
+//            int[] arr = {300,60,10};
+//            int[] arr2 = new int[3];
+//            if (t%10!=0) {
+//                System.out.print(-1);
+//                return;
+//            }
+//            for (int i=0; i<3;i++) {
+//                if (arr[i]<=t) {
+//                    arr2[i]=t/arr[i];
+//                    t%=arr[i];
+//                    if (t==0) break;
+//                }
+//            }
+//            for (int x : arr2) bw.write(x+" ");
+//            bw.flush();
+//            bw.close();
+//        }
+
+//        public static void main(String[] args) throws IOException {
+//            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//            int c = Integer.parseInt(br.readLine());
+//            int b = c/60;
+//            int a = b/5;
+//            c %=60;
+//            System.out.println(c%10==0 ? a+" "+b%5+" "+c/10:-1);
+//        }
 }
