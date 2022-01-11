@@ -1,4 +1,4 @@
-package InflearnAlgorithm;
+package inflearnAlgorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;
