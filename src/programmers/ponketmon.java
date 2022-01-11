@@ -3,14 +3,11 @@ package programmers;
 import java.util.HashSet;
 
 public class ponketmon {
-    public int solution(int[] arr) {
-        int answer=0;
+    public int solution(int[] nums) {
+        int answer = 0;
         HashSet<Integer> set = new HashSet<>();
-        for (int x : arr) {
-            set.add(x);
-        }
-        answer=arr.length/2;
-        if (set.size()<answer) answer=set.size();
+        for (int x : nums) set.add(x);
+        answer = Math.min(set.size(), nums.length/2);
         return answer;
     }
 
