@@ -47,7 +47,7 @@ class nineEightStarStar {
         graph = new ArrayList<>();
         for (int i=0; i<=n; i++) graph.add(new ArrayList<>());
         ch=new int[n+1];
-        for (int i = 0; i <m; i++) {
+        for (int i = 0; i < m; i++) {
             int a= scanner.nextInt();
             int b= scanner.nextInt();
             int c= scanner.nextInt();
