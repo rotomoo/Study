@@ -58,10 +58,8 @@ public class _15591 {
         while (!q.isEmpty()) {
             int cur = q.poll();
             for (Point next : graph.get(cur)) {
-                if (ch[next.vex]==1)
-                    continue;
-                if (k > next.usa)
-                    continue;
+                if (ch[next.vex]==1) continue;
+                if (k > next.usa) continue;
                 ch[next.vex] = 1;
                 cnt++;
                 q.add(next.vex);
