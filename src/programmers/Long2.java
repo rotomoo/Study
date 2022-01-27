@@ -1,6 +1,6 @@
 package programmers;
 
-class Long {
+class Long2 {
     public int solution(long num) {
         int answer= 0;
         while (answer<500) {
