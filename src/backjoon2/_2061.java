@@ -15,7 +15,7 @@ public class _2061 {
         int[] ch = new int[l+1];
         for (int i=2; i<l; i++) {
             if (ch[i]==1) continue;
-            if (k.mod(new BigInteger(String.valueOf(i))).toString().equals("0")) {
+            if (k.mod(BigInteger.valueOf(i)).toString().equals("0")) {
                 System.out.println("BAD"+" "+i);
                 System.exit(0);
             }
