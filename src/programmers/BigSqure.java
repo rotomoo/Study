@@ -1,6 +1,6 @@
 package programmers;
 
-class JustNowSong
+class BigSqure
 {
     public int solution(int [][]board)
     {
