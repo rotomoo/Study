@@ -1,6 +1,6 @@
 package programmers;
 
-public class JumpAndWarp {
+public class JumpAndTeleport {
 
     public static int DFS(int L) {
         if (L==1 || L==2) return 1;
