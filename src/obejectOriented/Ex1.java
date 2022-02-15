@@ -128,16 +128,16 @@ class Hero extends Person {
 
 public class Ex1 {
     public static void main(String[] args) {
-        // 객체 생성
-        Villain v1 = new Villain("좀비",20,180,80,"1568468153",2,99.5);
-        v1.printPerson();
-        System.out.print(v1.getName()+" ");
-        v1.move();
-
-        // 객체 생성
-        Villain v2 = new Villain("도깨비",30,180,80,"1568468153",1,99.5);
-        v2.printPerson();
-        System.out.print(v2.getName()+" ");
-        v2.move();
+//        // 객체 생성
+//        Villain v1 = new Villain("좀비",20,180,80,"1568468153",2,99.5);
+//        v1.printPerson();
+//        System.out.print(v1.getName()+" ");
+//        v1.move();
+//
+//        // 객체 생성
+//        Villain v2 = new Villain("도깨비",30,180,80,"1568468153",1,99.5);
+//        v2.printPerson();
+//        System.out.print(v2.getName()+" ");
+//        v2.move();
     }
 }
