@@ -11,12 +11,12 @@ public class sixFourRetry {
         for (int i=1; i<=n; i++) {
             if (!stack.contains(arr[i])) {
                 stack.push(arr[i]);
-                if (stack.size()>s) stack.remove(0);
             }
             else {
                 stack.removeElement(arr[i]);
                 stack.push(arr[i]);
             }
+            if (stack.size()>s) stack.remove(0);
         }
         for (int i=0; i<s; i++) answer[i]=stack.pop();
         return answer;
