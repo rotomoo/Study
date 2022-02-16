@@ -16,7 +16,9 @@ class roto {
 
         for (String x : report) {
             String[] tmp = x.split(" ");
-            reportMap.get(tmp[1]).add(tmp[0]);
+            HashSet<String> strings = reportMap.get(tmp[1]);
+            strings.add(tmp[0]);
+            reportMap.put(tmp[1], strings);
         }
 
         for (String key : reportMap.keySet()) {
