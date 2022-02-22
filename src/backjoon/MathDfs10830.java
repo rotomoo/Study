@@ -9,13 +9,15 @@ public class MathDfs10830 {
     static int n;
     static int[][] matrix;
 
-    public static int[][] multiply(int[][] o1, int[][] o2) {
-        int[][] tmp = new int[n][n];
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
-                for(int k = 0; k < n; k++) {
-                    tmp[i][j] += o1[i][k] * o2[k][j];
-                    tmp[i][j] %= 1000;
+    public static int[][] multiply(int[][] a, int[][] b) {
+        int[][] tmp = new int[a.length][b[0].length];
+        if (a[0].length == b.length) {
+            for (int i = 0; i < a.length; i++) {
+                for (int j = 0; j < b[0].length; j++) {
+                    for (int k = 0; k < a[0].length; k++) {
+                        tmp[i][j] += a[i][k] * b[k][j];
+                        tmp[i][j] %= 1000;
+                    }
                 }
             }
         }
