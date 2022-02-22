@@ -12,9 +12,19 @@ class SliceArray {
     }
 }
 
+//class SliceArray {
+//    public int[] solution(int n, long left, long right) {
+//        int[] tmp = new int[(int)(right-left)+1];
+//        for (int i = 0; i < tmp.length; i++) {
+//            tmp[i] = Math.max((int)((left+i)/n), (int)((left+i)%n))+1;
+//        }
+//        return tmp;
+//    }
+//}
+
 //class Solution {
 //    public int[] solution(int n, long left, long right) {
-//        int[] tmp = new int[(int)(right-left+1)];
+//        int[] tmp = new int[(int)(right-left)+1];
 //        for (int i = (int)left; i < right+1; i++) {
 //            tmp[(int)(i-left)] = Math.max(i/n, i%n)+1;
 //        }
@@ -31,7 +41,7 @@ class SliceArray {
 //                graph[i][j] = Math.max(i, j)+1;
 //            }
 //        }
-//        int[] tmp = new int[(int)(right-left+1)];
+//        int[] tmp = new int[(int)(right-left)+1];
 //        for (int i = (int)left; i < right+1; i++) {
 //            tmp[(int)(i-left)] = graph[i / n][i % n];
 //        }
