@@ -3,22 +3,18 @@ package programmers;
 import java.util.Arrays;
 
 class LifeBoat {
-    public static int solution(int[] people, int limit) {
+    public int solution(int[] people, int limit) {
         int answer = 0;
         Arrays.sort(people);
         int lt = 0;
-        for (int rt=people.length-1; lt<=rt; rt--){
-            if (lt==rt) {
-                answer++;
-                break;
+        int rt = people.length-1;
+        while (lt <= rt) {
+            if (people[lt] + people[rt] <= limit) {
+                lt++;
             }
-            if (people[lt]+people[rt]<=limit) lt++;
             answer++;
+            rt--;
         }
         return answer;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(solution(new int[]{70, 50, 80, 50}, 100));
     }
 }
