@@ -7,7 +7,6 @@ import java.util.Queue;
 class TruckCrossingBridge {
     public static int solution(int bridge_length, int weight, int[] truck_weights) {
         int answer = 0;
-        Arrays.sort(truck_weights);
         Queue<Integer> q = new LinkedList<>();
         int idx = 0;
         while (true) {
