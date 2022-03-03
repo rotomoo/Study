@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Dy1932StarStar {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -29,4 +30,25 @@ public class Dy1932StarStar {
         }
         System.out.print(answer);
     }
+
+//    public static void main(String args[]) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int n = Integer.parseInt(br.readLine());
+//
+//        int[][] dy = new int[n][n];
+//        for(int i=0; i<n; i++) {
+//            StringTokenizer st = new StringTokenizer(br.readLine());
+//            for (int j=0; j<i+1; j++) {
+//                dy[i][j] = Integer.parseInt(st.nextToken());
+//            }
+//        }
+//        int answer = dy[0][0];
+//        for(int i=1; i<n; i++) {
+//            for (int j=0; j<i+1; j++) {
+//                dy[i][j] += j==0 ? dy[i-1][j] : j == i ? dy[i-1][j-1] : Math.max(dy[i-1][j-1], dy[i-1][j]);
+//                if(i==n-1) answer = Math.max(answer, dy[i][j]);
+//            }
+//        }
+//        System.out.println(answer);
+//    }
 }
