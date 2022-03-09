@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 
 class Delivery {
-    static class Point implements Comparable<Solution.Point> {
+    static class Point implements Comparable<Point> {
         int vex, cost;
 
         public Point(int vex, int cost) {
@@ -14,7 +14,7 @@ class Delivery {
         }
 
         @Override
-        public int compareTo(Solution.Point o) {
+        public int compareTo(Point o) {
             return this.cost - o.cost;
         }
     }
@@ -22,26 +22,26 @@ class Delivery {
     public int solution(int N, int[][] road, int K) {
         int answer = 0;
         int[] result = new int[N + 1];
-        ArrayList<ArrayList<Solution.Point>> list = new ArrayList<>();
+        ArrayList<ArrayList<Point>> list = new ArrayList<>();
         for (int i = 0; i <= N; i++) {
             list.add(new ArrayList<>());
         }
         Arrays.fill(result, Integer.MAX_VALUE);
         result[1] = 0;
         for (int[] x : road) {
-            list.get(x[0]).add(new Solution.Point(x[1], x[2]));
-            list.get(x[1]).add(new Solution.Point(x[0], x[2]));
+            list.get(x[0]).add(new Point(x[1], x[2]));
+            list.get(x[1]).add(new Point(x[0], x[2]));
         }
-        PriorityQueue<Solution.Point> pq = new PriorityQueue<>();
-        pq.offer(new Solution.Point(1, 0));
+        PriorityQueue<Point> pq = new PriorityQueue<>();
+        pq.offer(new Point(1, 0));
         while (!pq.isEmpty()) {
-            Solution.Point tmp = pq.poll();
+            Point tmp = pq.poll();
             int nowVex = tmp.vex;
             int nowCost = tmp.cost;
-            for (Solution.Point ob : list.get(nowVex)) {
+            for (Point ob : list.get(nowVex)) {
                 if (result[ob.vex] > nowCost + ob.cost) {
                     result[ob.vex] = nowCost + ob.cost;
-                    pq.offer(new Solution.Point(ob.vex, nowCost + ob.cost));
+                    pq.offer(new Point(ob.vex, nowCost + ob.cost));
                 }
             }
         }
