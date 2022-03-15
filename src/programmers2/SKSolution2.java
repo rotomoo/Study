@@ -28,13 +28,21 @@ class SKSolution2 {
 
 
     public static void BFS() {
-        int[] dx = Run == true ? new int[]{0, 1, 0, -1} : new int[]{-1, 0, 1, 0};
+        int[] dx = Run == true ? new int[]{0, 1, 0, -1} : new int[]{1, 0, -1, 0};
         int[] dy = Run == true ? new int[]{1, 0, -1, 0} : new int[]{0, 1, 0, -1};
         Queue<Point> q = new LinkedList<>();
-        q.offer(new Point(0, 0, 0));
-        q.offer(new Point(0, N-1, 1));
-        q.offer(new Point(N-1, N-1, 2));
-        q.offer(new Point(N-1, 0, 3));
+        if (Run == true) {
+            q.offer(new Point(0, 0, 0));
+            q.offer(new Point(0, N-1, 1));
+            q.offer(new Point(N-1, N-1, 2));
+            q.offer(new Point(N-1, 0, 3));
+        }
+        else {
+            q.offer(new Point(0, 0, 0));
+            q.offer(new Point(N - 1, 0, 1));
+            q.offer(new Point(N - 1, N - 1, 2));
+            q.offer(new Point(0, N - 1, 3));
+        }
         graph[0][0] = 1;
         graph[0][N-1] = 1;
         graph[N-1][0] = 1;
