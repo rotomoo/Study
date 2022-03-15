@@ -6,34 +6,32 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class MathDfs10830 {
+    static int[][] graph;
     static int n;
-    static int[][] matrix;
 
     public static int[][] multiply(int[][] a, int[][] b) {
-        int[][] tmp = new int[a.length][b[0].length];
+        int[][] multi = new int[a.length][b[0].length];
         if (a[0].length == b.length) {
             for (int i = 0; i < a.length; i++) {
                 for (int j = 0; j < b[0].length; j++) {
                     for (int k = 0; k < a[0].length; k++) {
-                        tmp[i][j] += a[i][k] * b[k][j];
-                        tmp[i][j] %= 1000;
+                        multi[i][j] += a[i][k] * b[k][j];
+                        multi[i][j] %= 1000;
                     }
                 }
             }
         }
-        return tmp;
+        return multi;
     }
 
-    public static int[][] pow(long power) {
-        if (power == 1) {
-            return matrix;
+    public static int[][] DFS(long b) {
+        if (b==1) return graph;
+        int[][] tmp = DFS(b / 2);
+        tmp = multiply(tmp, tmp);
+        if (b%2==1) {
+            return multiply(tmp, graph);
         }
-        int[][] ret = pow(power / 2);
-        ret = multiply(ret, ret);
-        if (power % 2 == 1) {
-            ret = multiply(ret, matrix);
-        }
-        return ret;
+        return tmp;
     }
 
     public static void main(String[] args) throws IOException {
@@ -41,16 +39,14 @@ public class MathDfs10830 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
         long b = Long.parseLong(st.nextToken());
-        matrix = new int[n][n];
+        graph = new int[n][n];
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < n; j++) {
-                matrix[i][j] = Integer.parseInt(st.nextToken()) % 1000;
+                graph[i][j] = Integer.parseInt(st.nextToken()) % 1000;
             }
         }
-
-        int[][] answer = pow(b);
-
+        int[][] answer = DFS(b);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(answer[i][j]+" ");
