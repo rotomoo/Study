@@ -3,7 +3,7 @@ package programmers;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Stack2 {
+public class Printer {
     static class Point {
         int idx,p;
         Point(int idx,int p) {
@@ -37,7 +37,7 @@ public class Stack2 {
     }
 
     public static void main(String[] args) {
-        Stack2 T = new Stack2();
+        Printer T = new Printer();
         int[] priorities={1,1,9,1,1,1};
         int location=0;
         System.out.println(T.solution(priorities,location));
