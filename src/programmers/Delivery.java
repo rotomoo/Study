@@ -38,6 +38,7 @@ class Delivery {
             Point tmp = pq.poll();
             int nowVex = tmp.vex;
             int nowCost = tmp.cost;
+            if (nowCost > result[nowVex]) continue;
             for (Point ob : list.get(nowVex)) {
                 if (result[ob.vex] > nowCost + ob.cost) {
                     result[ob.vex] = nowCost + ob.cost;
