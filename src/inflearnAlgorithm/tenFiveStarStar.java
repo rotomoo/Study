@@ -6,12 +6,13 @@ import java.util.Scanner;
 class tenFiveStarStar {
     static int[] dy;
     public int solution(int n, int[] arr, int m ) {
-        Arrays.fill(dy,Integer.MAX_VALUE);
+        Arrays.fill(dy,2000000000);
         dy[0]=0;
         for (int i=0; i<n; i++) {
             for (int j=arr[i];j<=m; j++) {
                 dy[j]=Math.min(dy[j],dy[j-arr[i]]+1);
             }
+            System.out.println();
         }
         return dy[m];
     }

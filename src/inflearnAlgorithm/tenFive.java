@@ -7,12 +7,15 @@ class tenFive {
     static int n, m;
     static int[] dy;
     public int solution(int[] coin) {
-        Arrays.fill(dy, Integer.MAX_VALUE);
+        Arrays.fill(dy, 2000000000);
         dy[0]=0;
         for (int i=0; i<n; i++) {
             for (int j = coin[i]; j <= m; j++) {
                 dy[j] = Math.min(dy[j], dy[j - coin[i]] + 1);
             }
+        }
+        for (int x : dy) {
+            System.out.print(x+" ");
         }
         return dy[m];
     }
