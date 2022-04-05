@@ -1,6 +1,6 @@
 package programmers2;
 
-class Solution {
+class TakePhoto {
     static int[] ch, arr = {0, 1, 2, 3, 4, 5, 6, 7};
     static char[] charArr = {'A', 'C', 'F', 'J', 'M', 'N', 'R', 'T'};
     static int answer;
