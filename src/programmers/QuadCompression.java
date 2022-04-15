@@ -1,32 +1,34 @@
 package programmers;
 
 class QuadCompression {
-    static int[] answer;
-    static int[][] arrTmp;
+    static int[][] Arr;
+    static int[] answer = new int[2];
 
-    public static void DFS(int len, int x, int y) {
-        if (isBlock(len, x, y) || len == 1) {
-            answer[arrTmp[x][y]]++;
-            return;
-        }
-        DFS(len / 2, x, y);
-        DFS(len / 2, x + len / 2, y);
-        DFS(len / 2, x, y + len / 2);
-        DFS(len / 2, x + len / 2, y + len / 2);
-    }
-
-    public static boolean isBlock(int len, int x, int y) {
-        for (int i = x; i < len + x; i++) {
-            for (int j = y; j < len + y; j++) {
-                if (arrTmp[x][y] != arrTmp[i][j]) return false;
+    public boolean isCheck(int L, int x, int y) {
+        int num = Arr[x][y];
+        for (int i = x; i < x+L; i++) {
+            for (int j = y; j < y+L; j++) {
+                if (num!=Arr[i][j]) return false;
             }
         }
         return true;
     }
 
+    public void DFS(int L, int x, int y) {
+        if (isCheck(L, x, y) || L==1) {
+            answer[Arr[x][y]]++;
+            return;
+        }
+        int newLen = L/2;
+        DFS(newLen, x, y);
+        DFS(newLen, x+newLen, y);
+        DFS(newLen, x, y+newLen);
+        DFS(newLen, x+newLen, y+newLen);
+    }
+
+
     public int[] solution(int[][] arr) {
-        answer = new int[2];
-        arrTmp = arr;
+        Arr = arr;
         DFS(arr.length, 0, 0);
         return answer;
     }
