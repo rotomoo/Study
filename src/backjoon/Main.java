@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Greedy1026 {
+public class Main {
     public static void main(String[] args) throws IOException {
 
         // buffer 선언
@@ -49,15 +49,15 @@ public class Greedy1026 {
         Arrays.sort(a);
 
         int answer = 0;
-
+        
         // a의 최소값부터
         for (int i = 0; i < a.length; i++) {
             // bList max 구하기
             int max = Collections.max(bList);
-
+            
             // a의 최소값 * b의 최대값 더해주기
             answer += a[i] * max;
-
+            
             // bList max 원소 삭제 (==bList.remove(new Integer(max));
             bList.remove(Integer.valueOf(max));
         }
