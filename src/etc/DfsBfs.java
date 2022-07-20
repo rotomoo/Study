@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class DfsBfs {
     static int n, m;
     static int[][] map;
     static int[] ch;
