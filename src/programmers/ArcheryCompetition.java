@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class Solution {
+class ArcheryCompetition {
 
     // 점수, 횟수 나누는 객체
     static class Point {
