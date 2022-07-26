@@ -2,7 +2,7 @@ package programmers2;
 
 import java.util.Arrays;
 
-class Solution {
+class DpSolution2 {
     public static int solution(int alp, int cop, int[][] problems) {
         Arrays.sort(problems, (o1, o2) -> {
             int[] a = o1;
