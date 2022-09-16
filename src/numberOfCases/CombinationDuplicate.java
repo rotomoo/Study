@@ -2,7 +2,7 @@ package numberOfCases;
 
 import java.util.Scanner;
 
-public class CombinationWithRepetition {
+public class CombinationDuplicate {
     static int n, r;
     static int[] cb;
 
