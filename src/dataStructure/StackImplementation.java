@@ -25,7 +25,8 @@ public class StackImplementation {
             System.out.println("stack is Empty");
             System.exit(-1);
         }
-        return arr[top--];
+        int pollValue = arr[top--];
+        return pollValue;
     }
 
     public int peek() {
