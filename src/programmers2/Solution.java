@@ -21,15 +21,16 @@ class Solution {
             else time = sArr[i];
         }
 
-        switch (dayOfWeek) {
-            case "Mon":
-                time = 0;
+//        switch (dayOfWeek) {
+//            case "Mon":
+//                time = 0;
+//
+//
+//                sdf.format("E mm:ss");
+//        }
 
-
-                sdf.format("E mm:ss");
-        }
-
-        timeList.add()
+//        timeList.add()
+        return timeList;
     }
 
     public int solution(String S) {
@@ -37,5 +38,6 @@ class Solution {
         String[] sArr = S.split(" ");
 
         getTime(sArr);
+        return 0;
     }
 }
