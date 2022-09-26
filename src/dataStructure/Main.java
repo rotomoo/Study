@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         Deque<Integer> deque = new ArrayDeque<>(10);
-        Queue<Integer> queue = new LinkedList<>(10);
+//        Queue<Integer> queue = new LinkedList<>(10);
 //        PriorityQueue<Integer> pq2 = new PriorityQueue<>(Collections.reverseOrder());
 //        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
@@ -22,7 +22,6 @@ public class Main {
 //        System.out.println("pq.poll() = " + pq.poll());
 //        System.out.println("pq.poll() = " + pq.poll());
 
-        Queue<> queue = new DelayQueue<>(10);
         deque.offer(1);
         deque.offerLast(2);
         deque.offerLast(3);
