@@ -1,15 +1,14 @@
 package dataStructure;
 
-class ListNodeStack<T> {
+class ListNode<T> {
+    T value;
+    ListNode<T> nextListNode;
+}
 
-    // 현재 값, 다음 노드를 가지고있는 Node객체
-    private class Node {
-        T value;
-        Node nextNode;
-    }
+public class ListNodeStack<T> {
 
-    // topNode는 Stack의 최상단 노드
-    private Node topNode;
+    // 필드, topNode는 Stack의 최상단 노드
+    private ListNode<T> topNode;
 
     // Stack 생성자, 생성될 때 topNode null
     public ListNodeStack() {
@@ -17,23 +16,23 @@ class ListNodeStack<T> {
     }
 
     // 비었는지 확인하는 메서드, topNode가 null이라면 true반환
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return topNode == null;
     }
 
     // 스택에 값을 넣는 메서드
     public void push(T value) {
-        // 기존에 만들었던 node객체인, newNode 선언
-        Node newNode = new Node();
+        // ListNode 생성자로, newListNode 인스턴스 생성
+        ListNode<T> newListNode = new ListNode();
         
-        // newNode의 값은 입력받은 값.
-        newNode.value = value;
+        // newListNode의 값은 입력받은 값.
+        newListNode.value = value;
 
-        // newNode의 다음 노드는 기존의 topNode가 되고
-        newNode.nextNode = topNode;
+        // newListNode의 다음 노드는 필드(기존)의 topNode가 되고
+        newListNode.nextListNode = topNode;
 
-        // topNode를 지금 만든 newNode로 바꿈.
-        topNode = newNode;
+        // 필드(현재)의 topNode를 지금 만든 newListNode로 바꿈.
+        topNode = newListNode;
     }
 
     // 스택의 최상단 값을 삭제하고 리턴하는 메서드
@@ -47,7 +46,7 @@ class ListNodeStack<T> {
         T popValue = topNode.value;
         
         // 기존 topNode는 topNode의 nextNode로 바꿔주고
-        topNode = topNode.nextNode;
+        topNode = topNode.nextListNode;
 
         // popValue를 리턴해줌.
         return popValue;
