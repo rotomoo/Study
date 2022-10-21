@@ -52,7 +52,6 @@ public class Boxing {
         System.out.println(list.get(0).equals(list.get(1)));
         System.out.println(list.get(0));
 
-        String =""
         Integer e = 1;
         Integer f = 1;
         System.out.println(e==f);

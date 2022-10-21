@@ -32,6 +32,9 @@ public class GenericClass{
 
 // 런타임에서 오류가 발생하여 어디서 오류인지 찾기가 힘들다.*/
 
+import java.util.ArrayList;
+import java.util.List;
+
 class User {
 }
 
@@ -55,7 +58,6 @@ class Member<T extends User>{
 
 public class GenericClass{
     public static void main(String[] args) {
-
         // 제네릭을 사용하여 User타입 인스턴스 생성
         Member<User> userMember = new Member<>();
         Member<Admin> adminMember = new Member<>();
